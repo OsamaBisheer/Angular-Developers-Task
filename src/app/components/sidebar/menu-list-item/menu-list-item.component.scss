@@ -1,0 +1,15 @@
+.sub-menu,
+a.expanded {
+  background: var(--side-menu-expanded-area);
+}
+
+.sub-menu-item {
+  padding-inline-start: 16px;
+}
+
+a.active {
+  background: var(--side-menu-active-item) !important;
+  mat-icon {
+    color: #32373a;
+  }
+}

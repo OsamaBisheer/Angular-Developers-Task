@@ -1,0 +1,76 @@
+<div style="height: 91vh">
+  <mat-sidenav-container style="margin-top: 0">
+    <mat-sidenav
+      [mode]="'side'"
+      [fixedInViewport]="false"
+      #snav
+      opened
+      fixedTopGap="56"
+    >
+      <div style="padding: 0 16px">
+        <mat-nav-list>
+          <div style="margin: 32px 0 32px 16px; position: relative">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Jump to ..."
+              style="padding-right: 32px"
+            />
+            <mat-icon style="position: absolute; top: 8px; right: 5px"
+              >nfc</mat-icon
+            >
+          </div>
+          <h2 mat-list-item style="padding-left: 16px">Structure API</h2>
+          <a mat-list-item> Introduction </a>
+          <app-menu-list-item
+            [item]="authNav"
+            *ngIf="authNav"
+          ></app-menu-list-item>
+          <a mat-list-item> Pagination </a>
+          <a mat-list-item> Errors </a>
+          <a mat-list-item> Versioning </a>
+          <a mat-list-item> Capabilities </a>
+
+          <a mat-list-item
+            ><div class="d-flex justify-content-between" style="padding: 8px 0">
+              Create a token
+              <mat-chip>Post</mat-chip>
+            </div></a
+          >
+
+          <hr />
+
+          <h2 mat-list-item style="padding-left: 16px">Database</h2>
+          <app-menu-list-item
+            [item]="databaseObjNav"
+            *ngIf="databaseObjNav"
+          ></app-menu-list-item>
+          <app-menu-list-item
+            [item]="queryDBNav"
+            *ngIf="queryDBNav"
+          ></app-menu-list-item>
+          <a mat-list-item> Create a database </a>
+          <a mat-list-item
+            ><div class="d-flex justify-content-between" style="padding: 8px 0">
+              Update database
+              <mat-chip>Post</mat-chip>
+            </div></a
+          >
+          <a mat-list-item
+            ><div class="d-flex justify-content-between" style="padding: 8px 0">
+              Retrieve a database
+              <mat-chip>Patch</mat-chip>
+            </div></a
+          >
+          <a mat-list-item
+            ><div class="d-flex justify-content-between" style="padding: 8px 0">
+              List databases
+              <mat-chip>Get</mat-chip>
+            </div></a
+          >
+          <a mat-list-item> Other </a>
+        </mat-nav-list>
+      </div>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>

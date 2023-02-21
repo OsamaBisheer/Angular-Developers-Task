@@ -1,0 +1,27 @@
+<a
+  mat-list-item
+  (click)="onItemSelected(item)"
+  [ngClass]="{ active: router.isActive(item.route, true) || isActiveParent() }"
+  class="menu-list-item"
+>
+  <div class="d-flex justify-content-between">
+    {{ item.displayName }}
+    <span *ngIf="item.children && item.children.length">
+      <mat-icon
+        [@indicatorRotate]="item['expanded'] ? 'expanded' : 'collapsed'"
+      >
+        expand_more
+      </mat-icon>
+    </span>
+  </div>
+</a>
+<div *ngIf="item['expanded']" class="sub-menu">
+  <div class="sub-menu-item">
+    <app-menu-list-item
+      *ngFor="let child of item.children"
+      [item]="child"
+      [depth]="depth + 1"
+    >
+    </app-menu-list-item>
+  </div>
+</div>
